@@ -1,22 +1,28 @@
 # Class-wise Autoencoders Measure Classification Difficulty and Detect Label Mistakes
 
+<div align="center">
 
+[![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/fiftyone-community)
+[![Hugging Face](https://img.shields.io/badge/Hugging_Face-purple?style=flat&logo=huggingface)](https://huggingface.co/Voxel51)
+[![Voxel51 Blog](https://img.shields.io/badge/Voxel51_Blog-ff6d04?style=flat)](https://voxel51.com/blog)
+[![Newsletter](https://img.shields.io/badge/Newsletter-BE5B25?logo=mail.ru&logoColor=white)](https://share.hsforms.com/1zpJ60ggaQtOoVeBqIZdaaA2ykyk)
+[![LinkedIn](https://img.shields.io/badge/In-white?style=flat&label=Linked&labelColor=blue)](https://www.linkedin.com/company/voxel51)
+[![Twitter](https://img.shields.io/badge/Twitter-000000?logo=x&logoColor=white)](https://x.com/voxel51)
+[![Medium](https://img.shields.io/badge/Medium-12100E?logo=medium&logoColor=white)](https://medium.com/voxel51)
+
+</div>
 
 [Jacob Marks](https://github.com/jacobmarks)\* $^1$, [Brent A. Griffin](https://github.com/griffbr)$^1$, [Jason J. Corso](https://github.com/jasoncorso)$^{1,2}$ 
-
 
 $\quad \quad$ $^1$[Voxel51](https://voxel51.com) $\quad$ $^2$[University of Michigan](https://web.eecs.umich.edu/~jjcorso/)
 
 \* Corresponding author
-
 
 <figure>
   <img src="./assets/dataset_difficulty.png" alt="Dataset difficulty scores for 19 common computer vision datasets. The scores are computed using the RER framework, which measures the difficulty of classifying each sample in the dataset." style="width:100%">
     <figcaption>Dataset difficulty scores for 19 common computer vision datasets. The scores are computed using the RER framework, which measures the difficulty of classifying each sample in the dataset.
     </figcaption>
 </figure>
-
-
 
 This repository contains the code for the paper *Class-wise Autoencoders Measure Classification Difficulty and Detect Label Mistakes*.
 
@@ -25,7 +31,6 @@ Reconstruction Error Ratios (RERs) provide a simple, fast, and flexible framewor
 RERs allow you to estimate the difficulty of classification for a given dataset. They can also be used to detect potential label mistakes in the dataset, by reinterpreting the RERs as a measure of mistakenness.
 
 This repo contains the code to compute RERs on your dataset and reproduce the experiments in the paper.
-
 
 ## Installation
 
@@ -53,7 +58,6 @@ Additionally, to generate confidence-based noise, you will need  `ultralytics>=0
 ```bash
 pip install ultralytics>=0.8.0 fiftyone>=0.25.0
 ```
-
 
 ## Usage
 
@@ -154,7 +158,6 @@ As detailed in Appendix D of the paper, we can use the RERs, the reconstruction 
 python run.py --dataset_name my_dataset --estimate_probs
 ```
 
-
 ## Reproducing Experiments
 
 ### Downloading and Preparing the Data
@@ -166,7 +169,6 @@ For RESISC45 and MedMNISTv2, you will need to have the `huggingface_hub` Python 
 ```bash
 pip install huggingface_hub
 ```
-
 
 To download and prepare all (non-ImageNet) datasets, you can run:
 
@@ -244,8 +246,6 @@ Before reaching out, you may want to try the following:
 - **Mislabel Detection**: If you are running mislabel detection experiments at a certain noise rate and with a certain seed, ensure that you have generated the noise for the dataset with the same noise rate and seed. Files for the noise generation are stored in the `data` directory.
 - **ParametricUMAP Crashing**: If the RER computation is crashing and/or not converging, it is likely due to numerical instabilities in the `a` and `b` UMAP parameters. These are set negative by default, which gives best results for dataset difficulty estimation, but can cause issues on some computers. If you are experiencing isues (and you are primarily concerned with mislabel detection), try setting these to positive values. Note that you will need to use the `test_methods.py` script to do this, as the `run.py` script does not support this functionality.
 - **Memory Issues and Hanging Jobs**: When working with large datasets like Places and ImageNet — and especially large datasets that have a large number of classes (like ImageNet), you may run into memory issues, which can cause the job to hang. This is in large part a limitation of the current implementation of the codebase. If this happens, try reducing the number of workers if you're running in parallel, or try running on a machine with more memory. If you're interested in helping us improve the codebase, please reach out!
-
-
 
 ## 📚 Citation
 
