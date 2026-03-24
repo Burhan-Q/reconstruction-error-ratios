@@ -2,6 +2,12 @@
 
 <div align="center">
 
+[Jacob Marks](https://github.com/jacobmarks)\* $^1$, [Brent A. Griffin](https://github.com/griffbr)$^1$, [Jason J. Corso](https://github.com/jasoncorso)$^{1,2}$ 
+
+$\quad \quad$ $^1$[Voxel51](https://voxel51.com) $\quad$ $^2$[University of Michigan](https://web.eecs.umich.edu/~jjcorso/)
+
+\* Corresponding author
+
 [![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/fiftyone-community)
 [![Hugging Face](https://img.shields.io/badge/Hugging_Face-purple?style=flat&logo=huggingface)](https://huggingface.co/Voxel51)
 [![Voxel51 Blog](https://img.shields.io/badge/Voxel51_Blog-ff6d04?style=flat)](https://voxel51.com/blog)
@@ -10,19 +16,13 @@
 [![Twitter](https://img.shields.io/badge/Twitter-000000?logo=x&logoColor=white)](https://x.com/voxel51)
 [![Medium](https://img.shields.io/badge/Medium-12100E?logo=medium&logoColor=white)](https://medium.com/voxel51)
 
-</div>
-
-[Jacob Marks](https://github.com/jacobmarks)\* $^1$, [Brent A. Griffin](https://github.com/griffbr)$^1$, [Jason J. Corso](https://github.com/jasoncorso)$^{1,2}$ 
-
-$\quad \quad$ $^1$[Voxel51](https://voxel51.com) $\quad$ $^2$[University of Michigan](https://web.eecs.umich.edu/~jjcorso/)
-
-\* Corresponding author
-
 <figure>
   <img src="./assets/dataset_difficulty.png" alt="Dataset difficulty scores for 19 common computer vision datasets. The scores are computed using the RER framework, which measures the difficulty of classifying each sample in the dataset." style="width:100%">
     <figcaption>Dataset difficulty scores for 19 common computer vision datasets. The scores are computed using the RER framework, which measures the difficulty of classifying each sample in the dataset.
     </figcaption>
 </figure>
+
+</div>
 
 This repository contains the code for the paper *Class-wise Autoencoders Measure Classification Difficulty and Detect Label Mistakes*.
 
